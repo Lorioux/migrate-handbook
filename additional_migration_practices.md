@@ -1,6 +1,6 @@
 # Additional Cloud Migration Best Practices
 
-## Source: Device42 - Cloud Migration Checklist for Success
+## Source: Cloud Migration Checklist for Success
 
 ### Comprehensive 12-Point Cloud Migration Checklist
 

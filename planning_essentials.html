@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration Planning Essentials</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);
+            margin: 0 auto;
+            position: relative;
+        }
+        .planning-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .planning-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .planning-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1a73e8, #4285f4);
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-12">
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">Migration Planning Essentials</h1>
+            <p class="text-xl text-gray-600">Foundation for Successful Cloud Migration</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 mb-8">
+            <!-- Left Column - Planning Steps -->
+            <div class="space-y-6">
+                <div class="planning-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number bg-blue-500">1</div>
+                        <h3 class="text-xl font-bold text-gray-800">Define Clear Objectives</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Understand the "why" behind migration</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Align with business goals</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Set SMART success metrics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="planning-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number bg-indigo-500">2</div>
+                        <h3 class="text-xl font-bold text-gray-800">Assess Infrastructure</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Complete inventory and documentation</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Analyze performance and capacity</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Map application dependencies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - More Planning Steps -->
+            <div class="space-y-6">
+                <div class="planning-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number bg-green-500">3</div>
+                        <h3 class="text-xl font-bold text-gray-800">Choose Cloud Strategy</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Evaluate deployment models</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Consider compliance requirements</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Assess total cost of ownership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="planning-card bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="step-number bg-purple-500">4</div>
+                        <h3 class="text-xl font-bold text-gray-800">Design Architecture</h3>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Plan cloud infrastructure design</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Design for scalability and elasticity</span>
+                        </div>
+                        <div class="checklist-item">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Plan networking and connectivity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section - Key Success Factors -->
+        <div class="grid grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                <div class="text-center">
+                    <i class="fas fa-users text-blue-500 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-gray-800 mb-2">Team Alignment</h4>
+                    <p class="text-sm text-gray-600">
+                        Ensure cross-functional collaboration and clear communication 
+                        across all stakeholders
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
+                <div class="text-center">
+                    <i class="fas fa-clock text-green-500 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-gray-800 mb-2">Realistic Timeline</h4>
+                    <p class="text-sm text-gray-600">
+                        Set achievable milestones with buffer time for 
+                        testing and validation
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-purple-500 text-3xl mb-3"></i>
+                    <h4 class="font-bold text-gray-800 mb-2">Risk Management</h4>
+                    <p class="text-sm text-gray-600">
+                        Identify potential risks early and develop 
+                        mitigation strategies
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speaker Notes -->
+    <div style="display: none;" class="speaker-notes">
+        <h3>Speaker Notes - Migration Planning Essentials</h3>
+        
+        <p><strong>Introduction:</strong></p>
+        <ul>
+            <li>Proper planning is the foundation of successful cloud migration</li>
+            <li>These four essential steps ensure comprehensive preparation</li>
+            <li>Each step builds upon the previous one to create a solid migration foundation</li>
+        </ul>
+        
+        <p><strong>Step 1: Define Clear Objectives</strong></p>
+        <ul>
+            <li><strong>Understand the "why":</strong> Conduct comprehensive analysis of organizational needs, pain points, and aspirations</li>
+            <li><strong>Align with business goals:</strong> Connect migration to broader objectives like market expansion, cost reduction, innovation</li>
+            <li><strong>Set SMART metrics:</strong> Specific, Measurable, Achievable, Relevant, Time-bound targets</li>
+            <li>Examples: Reduce infrastructure costs by 30%, improve application response time by 50%, increase deployment frequency</li>
+            <li>Ensure flexibility for future evolution and changing business needs</li>
+        </ul>
+        
+        <p><strong>Step 2: Assess Infrastructure</strong></p>
+        <ul>
+            <li><strong>Complete inventory:</strong> Document all hardware, software, applications, and data</li>
+            <li><strong>Performance analysis:</strong> Establish current performance baselines and capacity utilization</li>
+            <li><strong>Dependency mapping:</strong> Understand application interdependencies and requirements</li>
+            <li>Conduct security and compliance assessment of current state</li>
+            <li>Use tools like Google Cloud Migration Center for automated discovery</li>
+            <li>Determine appropriate timeline and milestones based on complexity</li>
+        </ul>
+        
+        <p><strong>Step 3: Choose Cloud Strategy</strong></p>
+        <ul>
+            <li><strong>Deployment models:</strong> Evaluate public, private, hybrid, and multi-cloud options</li>
+            <li><strong>Compliance requirements:</strong> Consider data residency, regulatory requirements, industry standards</li>
+            <li><strong>Total cost of ownership:</strong> Include migration costs, ongoing operational costs, and potential savings</li>
+            <li>Evaluate Google Cloud's global infrastructure and compliance certifications</li>
+            <li>Consider vendor lock-in implications and portability requirements</li>
+            <li>Assess customer support and SLA requirements</li>
+        </ul>
+        
+        <p><strong>Step 4: Design Architecture</strong></p>
+        <ul>
+            <li><strong>Infrastructure design:</strong> Plan compute, storage, networking, and security architecture</li>
+            <li><strong>Scalability and elasticity:</strong> Design for auto-scaling and dynamic resource allocation</li>
+            <li><strong>Networking and connectivity:</strong> Plan VPC design, hybrid connectivity, and security zones</li>
+            <li>Right-size resources for performance and cost optimization</li>
+            <li>Plan data management and storage strategies</li>
+            <li>Design for high availability and disaster recovery</li>
+        </ul>
+        
+        <p><strong>Key Success Factors:</strong></p>
+        
+        <p><strong>Team Alignment:</strong></p>
+        <ul>
+            <li>Establish clear roles and responsibilities</li>
+            <li>Ensure executive sponsorship and support</li>
+            <li>Create cross-functional migration team</li>
+            <li>Implement effective communication plan</li>
+            <li>Provide training and skill development</li>
+        </ul>
+        
+        <p><strong>Realistic Timeline:</strong></p>
+        <ul>
+            <li>Account for complexity and dependencies</li>
+            <li>Include time for testing and validation</li>
+            <li>Plan for iterative approach with pilot projects</li>
+            <li>Build in buffer time for unexpected challenges</li>
+            <li>Set achievable milestones and celebrate wins</li>
+        </ul>
+        
+        <p><strong>Risk Management:</strong></p>
+        <ul>
+            <li>Identify technical, business, and operational risks</li>
+            <li>Develop mitigation strategies for each risk</li>
+            <li>Plan rollback procedures for critical systems</li>
+            <li>Implement comprehensive testing strategies</li>
+            <li>Establish monitoring and alerting for early issue detection</li>
+        </ul>
+        
+        <p><strong>Planning Best Practices:</strong></p>
+        <ul>
+            <li>Start with pilot projects to gain experience</li>
+            <li>Use proven frameworks and methodologies</li>
+            <li>Leverage Google Cloud Professional Services for complex migrations</li>
+            <li>Document everything for knowledge transfer</li>
+            <li>Plan for ongoing optimization post-migration</li>
+        </ul>
+    </div>
+</body>
+</html>
+

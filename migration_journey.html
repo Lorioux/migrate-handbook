@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cloud Migration Journey</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);
+            margin: 0 auto;
+            position: relative;
+        }
+        .phase-card {
+            transition: all 0.3s ease;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 115, 232, 0.15);
+        }
+        .journey-path {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: linear-gradient(90deg, #1a73e8, #4285f4, #34a853, #fbbc04);
+            border-radius: 2px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-12 relative">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">The Cloud Migration Journey</h1>
+            <p class="text-xl text-gray-600">A Strategic Four-Phase Approach to Cloud Transformation</p>
+        </div>
+
+        <div class="journey-path"></div>
+
+        <div class="grid grid-cols-4 gap-8 relative z-10 mb-8">
+            <!-- Phase 1: Assess -->
+            <div class="phase-card bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Assess</h3>
+                </div>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Infrastructure inventory</li>
+                    <li>• Application dependencies</li>
+                    <li>• Performance benchmarks</li>
+                    <li>• Cost analysis</li>
+                </ul>
+            </div>
+
+            <!-- Phase 2: Plan -->
+            <div class="phase-card bg-white rounded-xl p-6 shadow-lg border-l-4 border-indigo-500">
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-drafting-compass text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Plan</h3>
+                </div>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Cloud infrastructure design</li>
+                    <li>• Migration strategy</li>
+                    <li>• Identity management</li>
+                    <li>• Network architecture</li>
+                </ul>
+            </div>
+
+            <!-- Phase 3: Deploy -->
+            <div class="phase-card bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-500">
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Deploy</h3>
+                </div>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Workload migration</li>
+                    <li>• Data transfer</li>
+                    <li>• Testing & validation</li>
+                    <li>• Go-live execution</li>
+                </ul>
+            </div>
+
+            <!-- Phase 4: Optimize -->
+            <div class="phase-card bg-white rounded-xl p-6 shadow-lg border-l-4 border-yellow-500">
+                <div class="text-center mb-4">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Optimize</h3>
+                </div>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Performance tuning</li>
+                    <li>• Cost optimization</li>
+                    <li>• Security enhancement</li>
+                    <li>• Innovation enablement</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-500">
+            <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-lightbulb text-blue-500 text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Key Success Principle</h4>
+                    <p class="text-gray-700">
+                        <strong>Minimize workload changes during migration.</strong> Successful migrations focus on moving applications 
+                        with minimal modifications, then optimize them once they're running in the cloud. This approach reduces 
+                        risk and accelerates time-to-value.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speaker Notes -->
+    <div style="display: none;" class="speaker-notes">
+        <h3>Speaker Notes - The Cloud Migration Journey</h3>
+        
+        <p><strong>Opening:</strong></p>
+        <ul>
+            <li>Migration is not a single event but a strategic journey from your current state (Point A) to your desired cloud state (Point B)</li>
+            <li>Google Cloud recommends a proven four-phase approach that has been validated across thousands of migrations</li>
+        </ul>
+        
+        <p><strong>Phase 1 - Assess:</strong></p>
+        <ul>
+            <li>Comprehensive discovery of your existing environment</li>
+            <li>Understanding application dependencies and requirements</li>
+            <li>Establishing performance benchmarks for comparison</li>
+            <li>Total cost of ownership calculations</li>
+            <li>Tools: Migration Center, third-party discovery tools</li>
+        </ul>
+        
+        <p><strong>Phase 2 - Plan:</strong></p>
+        <ul>
+            <li>Design your target cloud infrastructure</li>
+            <li>Develop migration strategy and prioritization</li>
+            <li>Plan identity management and security frameworks</li>
+            <li>Design network architecture and connectivity</li>
+            <li>Create detailed project timelines and resource allocation</li>
+        </ul>
+        
+        <p><strong>Phase 3 - Deploy:</strong></p>
+        <ul>
+            <li>Execute the actual migration of workloads</li>
+            <li>Transfer data using appropriate Google Cloud tools</li>
+            <li>Conduct thorough testing and validation</li>
+            <li>Manage go-live activities and cutover processes</li>
+            <li>May require multiple iterations for complex environments</li>
+        </ul>
+        
+        <p><strong>Phase 4 - Optimize:</strong></p>
+        <ul>
+            <li>Take full advantage of cloud-native capabilities</li>
+            <li>Implement cost optimization strategies</li>
+            <li>Enhance security posture with cloud-native tools</li>
+            <li>Enable innovation through AI/ML and advanced services</li>
+            <li>Continuous improvement and modernization</li>
+        </ul>
+        
+        <p><strong>Key Success Principle:</strong></p>
+        <ul>
+            <li>The most successful migrations minimize changes during the migration itself</li>
+            <li>Focus on "lift and shift" first, then optimize in the cloud</li>
+            <li>This reduces risk, complexity, and time to value</li>
+            <li>Optimization happens after workloads are stable in the cloud</li>
+        </ul>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Migration Strategy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);
+            margin: 0 auto;
+            position: relative;
+        }
+        .tool-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .migration-step {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 8px 0;
+            border-left: 4px solid #1a73e8;
+            transition: all 0.3s ease;
+        }
+        .migration-step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-8 flex flex-col justify-evenly">
+        <div class="text-center mb-6">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Data Migration Strategy</h1>
+            <p class="text-lg text-gray-600">Moving Your Data Safely and Efficiently</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 flex-1">
+            <!-- Left Column - Migration Process -->
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Migration Process</h3>
+                
+                <div class="migration-step">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">1</div>
+                        <h4 class="font-bold text-gray-800">Assess & Categorize</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 ml-11">Inventory data sources, classify by sensitivity and importance</p>
+                </div>
+
+                <div class="migration-step">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">2</div>
+                        <h4 class="font-bold text-gray-800">Map & Transform</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 ml-11">Map data relationships, plan transformations and cleansing</p>
+                </div>
+
+                <div class="migration-step">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">3</div>
+                        <h4 class="font-bold text-gray-800">Choose Method</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 ml-11">Select appropriate migration tools and techniques</p>
+                </div>
+
+                <div class="migration-step">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">4</div>
+                        <h4 class="font-bold text-gray-800">Validate & Secure</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 ml-11">Ensure data integrity, security, and compliance</p>
+                </div>
+            </div>
+
+            <!-- Right Column - Google Cloud Tools -->
+            <div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Google Cloud Migration Tools</h3>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="tool-card border-t-blue-500">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-compass text-blue-500 text-lg mr-2"></i>
+                                <h4 class="font-bold text-gray-800 text-sm">Migration Center</h4>
+                            </div>
+                            <p class="text-xs text-gray-600">Unified platform for end-to-end migration journey</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card border-t-green-500">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-server text-green-500 text-lg mr-2"></i>
+                                <h4 class="font-bold text-gray-800 text-sm">Migrate to VMs</h4>
+                            </div>
+                            <p class="text-xs text-gray-600">Physical servers and VMs migration in minutes</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card border-t-purple-500">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-database text-purple-500 text-lg mr-2"></i>
+                                <h4 class="font-bold text-gray-800 text-sm">Database Migration</h4>
+                            </div>
+                            <p class="text-xs text-gray-600">Migrate databases to Google Cloud with minimal downtime</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card border-t-orange-500">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-cloud-upload-alt text-orange-500 text-lg mr-2"></i>
+                                <h4 class="font-bold text-gray-800 text-sm">Storage Transfer</h4>
+                            </div>
+                            <p class="text-xs text-gray-600">Transfer data from cloud providers and on-premises</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card border-t-red-500">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-truck text-red-500 text-lg mr-2"></i>
+                                <h4 class="font-bold text-gray-800 text-sm">Transfer Appliance</h4>
+                            </div>
+                            <p class="text-xs text-gray-600">Hardware appliance for large data volumes (TB to PB)</p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card border-t-indigo-500">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-chart-bar text-indigo-500 text-lg mr-2"></i>
+                                <h4 class="font-bold text-gray-800 text-sm">BigQuery Migration</h4>
+                            </div>
+                            <p class="text-xs text-gray-600">Comprehensive data warehouse migration solution</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mt-4">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 border border-blue-200">
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-blue-500 text-2xl mb-2"></i>
+                    <h4 class="font-bold text-gray-800 text-sm mb-1">Security First</h4>
+                    <p class="text-xs text-gray-600">Encryption in transit and at rest, compliance maintained</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-4 border border-green-200">
+                <div class="text-center">
+                    <i class="fas fa-clock text-green-500 text-2xl mb-2"></i>
+                    <h4 class="font-bold text-gray-800 text-sm mb-1">Minimal Downtime</h4>
+                    <p class="text-xs text-gray-600">Live migration capabilities with continuous replication</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-4 border border-purple-200">
+                <div class="text-center">
+                    <i class="fas fa-check-double text-purple-500 text-2xl mb-2"></i>
+                    <h4 class="font-bold text-gray-800 text-sm mb-1">Data Integrity</h4>
+                    <p class="text-xs text-gray-600">Comprehensive validation and integrity checks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speaker Notes -->
+    <div style="display: none;" class="speaker-notes">
+        <h3>Speaker Notes - Data Migration Strategy</h3>
+        
+        <p><strong>Introduction:</strong></p>
+        <ul>
+            <li>Data migration is often the most critical and risky part of cloud migration</li>
+            <li>Requires careful planning, appropriate tools, and thorough validation</li>
+            <li>Google Cloud provides comprehensive tools for different migration scenarios</li>
+        </ul>
+        
+        <p><strong>Migration Process:</strong></p>
+        
+        <p><strong>1. Assess & Categorize:</strong></p>
+        <ul>
+            <li>Complete inventory of all data sources and systems</li>
+            <li>Classify data by sensitivity (public, internal, confidential, restricted)</li>
+            <li>Identify data dependencies and relationships</li>
+            <li>Assess data quality and identify cleansing needs</li>
+            <li>Determine compliance and regulatory requirements</li>
+        </ul>
+        
+        <p><strong>2. Map & Transform:</strong></p>
+        <ul>
+            <li>Map data relationships and dependencies between systems</li>
+            <li>Plan data transformations and format conversions</li>
+            <li>Design data cleansing and quality improvement processes</li>
+            <li>Ensure compatibility with target Google Cloud services</li>
+            <li>Plan for data archival and retention policies</li>
+        </ul>
+        
+        <p><strong>3. Choose Method:</strong></p>
+        <ul>
+            <li>Select appropriate migration tools based on data type and volume</li>
+            <li>Consider network bandwidth and transfer time requirements</li>
+            <li>Plan for online vs. offline migration approaches</li>
+            <li>Determine migration sequence and dependencies</li>
+            <li>Plan for rollback scenarios if needed</li>
+        </ul>
+        
+        <p><strong>4. Validate & Secure:</strong></p>
+        <ul>
+            <li>Implement comprehensive data validation and integrity checks</li>
+            <li>Ensure encryption in transit and at rest</li>
+            <li>Verify compliance with regulatory requirements</li>
+            <li>Test data access and functionality in target environment</li>
+            <li>Document migration process and results</li>
+        </ul>
+        
+        <p><strong>Google Cloud Migration Tools:</strong></p>
+        
+        <p><strong>Migration Center:</strong></p>
+        <ul>
+            <li>Unified platform for managing entire migration journey</li>
+            <li>Provides discovery, assessment, and planning capabilities</li>
+            <li>Integrates with other Google Cloud migration tools</li>
+            <li>Offers migration tracking and reporting</li>
+        </ul>
+        
+        <p><strong>Migrate to Virtual Machines:</strong></p>
+        <ul>
+            <li>Migrates physical servers and VMs to Google Cloud</li>
+            <li>Supports live migration with minimal downtime</li>
+            <li>Works with VMware, Hyper-V, and physical servers</li>
+            <li>Includes automatic OS licensing and optimization</li>
+        </ul>
+        
+        <p><strong>Database Migration Service:</strong></p>
+        <ul>
+            <li>Migrates databases to Google Cloud with minimal downtime</li>
+            <li>Supports MySQL, PostgreSQL, SQL Server, and Oracle</li>
+            <li>Provides continuous replication and validation</li>
+            <li>Includes schema conversion and optimization tools</li>
+        </ul>
+        
+        <p><strong>Storage Transfer Service:</strong></p>
+        <ul>
+            <li>Transfers data from other cloud providers and on-premises</li>
+            <li>Supports AWS S3, Azure Blob Storage, and HTTP/HTTPS sources</li>
+            <li>Provides scheduling and bandwidth control</li>
+            <li>Includes data validation and integrity checking</li>
+        </ul>
+        
+        <p><strong>Transfer Appliance:</strong></p>
+        <ul>
+            <li>Hardware appliance for large data volumes (hundreds of TB to PB)</li>
+            <li>Offline data transfer for bandwidth-constrained environments</li>
+            <li>Secure, encrypted data transfer</li>
+            <li>Faster than network transfer for large datasets</li>
+        </ul>
+        
+        <p><strong>BigQuery Migration Service:</strong></p>
+        <ul>
+            <li>Comprehensive solution for data warehouse migration</li>
+            <li>Supports migration from Teradata, Redshift, and other platforms</li>
+            <li>Includes SQL translation and optimization</li>
+            <li>Provides assessment and planning tools</li>
+        </ul>
+        
+        <p><strong>Key Success Factors:</strong></p>
+        
+        <p><strong>Security First:</strong></p>
+        <ul>
+            <li>All data encrypted in transit using TLS</li>
+            <li>Data encrypted at rest using Google Cloud encryption</li>
+            <li>Compliance maintained throughout migration process</li>
+            <li>Access controls and audit logging implemented</li>
+        </ul>
+        
+        <p><strong>Minimal Downtime:</strong></p>
+        <ul>
+            <li>Live migration capabilities where possible</li>
+            <li>Continuous replication for databases and applications</li>
+            <li>Planned maintenance windows for critical cutover</li>
+            <li>Rollback procedures for quick recovery</li>
+        </ul>
+        
+        <p><strong>Data Integrity:</strong></p>
+        <ul>
+            <li>Comprehensive validation and integrity checks</li>
+            <li>Checksum verification for all transferred data</li>
+            <li>Functional testing in target environment</li>
+            <li>Performance validation and optimization</li>
+        </ul>
+        
+        <p><strong>Best Practices:</strong></p>
+        <ul>
+            <li>Start with pilot migrations to gain experience</li>
+            <li>Test migration processes in non-production environments</li>
+            <li>Plan for data synchronization during transition period</li>
+            <li>Monitor migration progress and performance</li>
+            <li>Document lessons learned for future migrations</li>
+        </ul>
+    </div>
+</body>
+</html>
+

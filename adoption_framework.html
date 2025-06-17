@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Cloud Adoption Framework</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8faff 0%, #e8f0fe 100%);
+            margin: 0 auto;
+            position: relative;
+        }
+        .framework-grid {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .theme-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .theme-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .maturity-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 2px;
+        }
+        .tactical { background: #fef3c7; color: #92400e; }
+        .strategic { background: #dbeafe; color: #1e40af; }
+        .transformational { background: #d1fae5; color: #065f46; }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-12">
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">Google Cloud Adoption Framework</h1>
+            <p class="text-xl text-gray-600">Assess Your Organization's Cloud Readiness</p>
+        </div>
+
+        <div class="framework-grid">
+            <!-- Left side - Four Themes -->
+            <div class="space-y-4">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Four Assessment Themes</h3>
+                
+                <div class="theme-card bg-white rounded-lg p-4 shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-graduation-cap text-blue-500 text-xl mr-3"></i>
+                        <h4 class="font-bold text-lg">Learn</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Quality and scale of learning programs</p>
+                </div>
+
+                <div class="theme-card bg-white rounded-lg p-4 shadow-md border-l-4 border-indigo-500">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-users text-indigo-500 text-xl mr-3"></i>
+                        <h4 class="font-bold text-lg">Lead</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">IT department support with leadership mandate</p>
+                </div>
+
+                <div class="theme-card bg-white rounded-lg p-4 shadow-md border-l-4 border-green-500">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-expand-arrows-alt text-green-500 text-xl mr-3"></i>
+                        <h4 class="font-bold text-lg">Scale</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Cloud-optimized services and automation</p>
+                </div>
+
+                <div class="theme-card bg-white rounded-lg p-4 shadow-md border-l-4 border-red-500">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-shield-alt text-red-500 text-xl mr-3"></i>
+                        <h4 class="font-bold text-lg">Secure</h4>
+                    </div>
+                    <p class="text-sm text-gray-600">Protect environment from unauthorized access</p>
+                </div>
+            </div>
+
+            <!-- Right side - Maturity Matrix -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Three Maturity Phases</h3>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-4 bg-gray-50">
+                        <div class="p-4 font-bold text-center">Theme</div>
+                        <div class="p-4 font-bold text-center">Tactical</div>
+                        <div class="p-4 font-bold text-center">Strategic</div>
+                        <div class="p-4 font-bold text-center">Transformational</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 border-b">
+                        <div class="p-4 font-semibold bg-blue-50">Learn</div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge tactical">Self-taught</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge strategic">Organized training</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge transformational">Peer learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 border-b">
+                        <div class="p-4 font-semibold bg-indigo-50">Lead</div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge tactical">Heroic PM</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge strategic">Cross-functional</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge transformational">Platform teams</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 border-b">
+                        <div class="p-4 font-semibold bg-green-50">Scale</div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge tactical">Slow & risky</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge strategic">Templates</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge transformational">Consistent</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4">
+                        <div class="p-4 font-semibold bg-red-50">Secure</div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge tactical">Private network</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge strategic">Hybrid identity</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <span class="maturity-badge transformational">Zero trust</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+            <div class="flex items-center space-x-4">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-compass text-blue-500 text-3xl"></i>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Framework Purpose</h4>
+                    <p class="text-gray-700 text-sm">
+                        Use this framework to assess your organization's current cloud maturity, identify gaps, 
+                        and create a roadmap for advancing through the maturity phases. Most organizations 
+                        start at Tactical and progress toward Transformational capabilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Speaker Notes -->
+    <div style="display: none;" class="speaker-notes">
+        <h3>Speaker Notes - Google Cloud Adoption Framework</h3>
+        
+        <p><strong>Framework Overview:</strong></p>
+        <ul>
+            <li>Google Cloud's framework helps evaluate organizational maturity in adopting cloud technologies</li>
+            <li>Serves as both assessment tool and roadmap for cloud transformation</li>
+            <li>Based on real-world observations from thousands of cloud adoptions</li>
+        </ul>
+        
+        <p><strong>Four Assessment Themes:</strong></p>
+        
+        <p><strong>1. Learn (Graduation Cap):</strong></p>
+        <ul>
+            <li>Assesses quality and scale of learning programs</li>
+            <li>Tactical: Self-taught, third-party reliance</li>
+            <li>Strategic: Organized training, third-party assisted</li>
+            <li>Transformational: Peer learning and sharing, minimal external dependency</li>
+        </ul>
+        
+        <p><strong>2. Lead (Users):</strong></p>
+        <ul>
+            <li>Extent of IT department support with leadership mandate</li>
+            <li>Tactical: Teams by function, heroic project manager</li>
+            <li>Strategic: New cross-functional cloud team</li>
+            <li>Transformational: Cross-functional feature teams, centralized platform team</li>
+        </ul>
+        
+        <p><strong>3. Scale (Expand Arrows):</strong></p>
+        <ul>
+            <li>Usage of cloud-optimized services and operational automation</li>
+            <li>Tactical: Change is slow and risky, ops heavy</li>
+            <li>Strategic: Templates ensure good governance without manual toil</li>
+            <li>Transformational: All change is consistent, low risk, and quickly fixed</li>
+        </ul>
+        
+        <p><strong>4. Secure (Shield):</strong></p>
+        <ul>
+            <li>Capability to protect environment from unauthorized access</li>
+            <li>Tactical: Fear of public internet, trust in private network</li>
+            <li>Strategic: Central identity, hybrid network</li>
+            <li>Transformational: Trust only the right people, devices, and services (Zero Trust)</li>
+        </ul>
+        
+        <p><strong>Three Maturity Phases:</strong></p>
+        
+        <p><strong>Tactical Phase:</strong></p>
+        <ul>
+            <li>No coherent plans covering all workloads</li>
+            <li>Interested in quick return on investments</li>
+            <li>Little disruption to IT organization</li>
+        </ul>
+        
+        <p><strong>Strategic Phase:</strong></p>
+        <ul>
+            <li>Plan in place to develop individual workloads</li>
+            <li>Eye toward future scaling needs</li>
+            <li>Mid-term goal to streamline operations</li>
+        </ul>
+        
+        <p><strong>Transformational Phase:</strong></p>
+        <ul>
+            <li>Cloud operations work smoothly</li>
+            <li>Use data from operations to improve IT business</li>
+            <li>Long-term goal of making IT engine of innovation</li>
+        </ul>
+        
+        <p><strong>Using the Framework:</strong></p>
+        <ul>
+            <li>Assess current state across all four themes</li>
+            <li>Identify gaps and areas for improvement</li>
+            <li>Create roadmap for advancing maturity</li>
+            <li>Most organizations progress through phases over 2-3 years</li>
+            <li>Different themes may be at different maturity levels</li>
+        </ul>
+    </div>
+</body>
+</html>
+
